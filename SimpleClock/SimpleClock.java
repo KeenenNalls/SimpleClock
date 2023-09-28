@@ -80,6 +80,19 @@ public class SimpleClock extends JFrame {
             } catch (Exception e) {
                 e.getStackTrace();
             }
+
+        }
+
+        ItemListener change1224 = new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent event) {
+                int state = event.getStateChange();
+                if (state == ItemEvent.SELECTED) {
+                    timeFormat = new SimpleDateFormat("  HH:mm:ss a  ");
+                } else {
+                    timeFormat = new SimpleDateFormat("  hh:mm:ss a  ");
+                }
+            }
     
         JLabel timeLabel;
         JLabel dayLabel;
